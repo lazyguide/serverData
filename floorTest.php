@@ -1,14 +1,16 @@
 <?php
-$buildingID = $_POST['buildingID'];
-$floor = $_POST['floor'];
+$buildingID = "LM";
+$floor = 1;
 
 $link = @mysqli_connect('localhost', 'root', '12345678', 'lazyguide');
 $sql = "SELECT * FROM room WHERE buildingID = '$buildingID' AND FLOOR = $floor";
 $result = mysqli_query($link, $sql);
 
 $array = [];
+$count = 0;
 while($row = mysqli_fetch_assoc($result)){
-    array_push($array, $row);
+    $array['$count'] = $row;
+    $count++;
 }
 
 echo json_encode($array);
