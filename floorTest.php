@@ -7,10 +7,12 @@ $sql = "SELECT * FROM room WHERE buildingID = '$buildingID' AND FLOOR = $floor";
 $result = mysqli_query($link, $sql);
 
 $array = [];
-$count = 0;
+$count = "0";
 while($row = mysqli_fetch_assoc($result)){
-    $array['$count'] = $row;
-    $count++;
+    $array[$count] = $row;
+    $num = (int)$count;
+    $num++;
+    $count = (string)$num;
 }
 
 echo json_encode($array);
