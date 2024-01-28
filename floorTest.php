@@ -14,5 +14,5 @@ while($row = mysqli_fetch_assoc($result)){
     $count++;
 }
 
-echo json_encode($array);
+echo $array;
 ?>
