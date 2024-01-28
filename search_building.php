@@ -6,7 +6,7 @@ $sql = "SELECT * FROM building WHERE BUILDINGID = '$building'";
 
 $result = mysqli_query($link, $sql);
 
-$row = mysqli_fetch_row($result);
+$row = mysqli_fetch_assoc($result);
 
 echo json_encode($row);
 
