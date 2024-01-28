@@ -1,6 +1,6 @@
 <?php
-$buildingID = "LM";
-$floor = 1;
+$buildingID = $_POST['buildingID'];
+$floor = $_POST['floor'];
 
 $link = @mysqli_connect('localhost', 'root', '12345678', 'lazyguide');
 $sql = "SELECT * FROM room WHERE buildingID = '$buildingID' AND FLOOR = $floor";
