@@ -2,7 +2,7 @@
 $keyword = $_POST['keyword'];
 $link = @mysqli_connect("localhost", "root", "12345678", "lazyguide");
 
-$roomSQL = "SELECT * FROM room WHERE BUILDINGID LIKE '%".$keyword."%' OR BUILDINGNAME LIKE '%".$keyword."%' OR BUILDINGDESCRIPTION LIKE '%".$keyword."%'";
+$roomSQL = "SELECT * FROM room WHERE BUILDINGID LIKE '%".$keyword."%' OR ROOMID LIKE '%".$keyword."%' OR ROOMNAME LIKE '%".$keyword."%'";
 $roomResult = mysqli_query($link, $roomSQL);
 
 while($roomRow = mysqli_fetch_assoc($roomResult)) {
