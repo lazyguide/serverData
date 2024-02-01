@@ -9,7 +9,7 @@ while($roomRow = mysqli_fetch_assoc($roomResult)) {
     echo json_encode($roomRow);
 }
 
-if(strlen($keyword)){
+if(strlen($keyword) > 3){
     $building = substr($keyword,0,2);
     $room = substr($keyword, 2, 3);
     $SQL = "SELECT * FROM room WHERE BUILDINGID LIKE '%".$building."%' OR ROOMID LIKE '%".$room."%'";
