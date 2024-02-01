@@ -11,7 +11,7 @@ while($roomRow = mysqli_fetch_assoc($roomResult)) {
 
 if(strlen($keyword)){
     $building = substr($keyword,0,2);
-    $room = substr($keyword, 2);
+    $room = substr($keyword, 2, 3);
     $SQL = "SELECT * FROM room WHERE BUILDINGID LIKE '%".$building."%' OR ROOMID LIKE '%".$room."%'";
     $result = mysqli_query($link, $SQL);
     while($row = mysqli_fetch_assoc($result)) {
