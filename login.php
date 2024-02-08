@@ -9,7 +9,7 @@ $result = mysqli_query($link, $sql);
 
 if($row = mysqli_fetch_assoc($result)){
     $array = array("status" => "success", "userID" => $userID, "userName" => $row['USERNAME'],
-                    "password" => $password, "phone" => $row["phone"], "isVarified" => $row["ISVARIFIED"], "level" => $row["level"]);
+                    "password" => $password, "phone" => $row["PHONE"], "isVarified" => $row["ISVARIFIED"], "level" => $row["LEVEL"]);
     echo json_encode($array);
 }
 else{
