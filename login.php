@@ -2,8 +2,8 @@
 $userID = $_POST["userID"];
 $password = $_POST["password"];
 
-$link = @mysqli_connect("localhost", "root", "12345678", "account");
-$sql = "SELECT * FROM user WHERE USERID = '$userID' AND PASSWORD = '$password'";
+$link = @mysqli_connect("localhost", "root", "12345678", "lazyguide");
+$sql = "SELECT * FROM account WHERE USERID = '$userID' AND PASSWORD = '$password'";
 
 $result = mysqli_query($link, $sql);
 
