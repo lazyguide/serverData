@@ -3,7 +3,7 @@ $userID = $_POST["userID"];
 $password = $_POST["password"];
 
 $link = @mysqli_connect("localhost", "root", "12345678", "account");
-$sql = "SELECT * FROM user WHERE username = '$userID' AND password = '$password'";
+$sql = "SELECT * FROM user WHERE USERID = '$userID' AND PASSWORD = '$password'";
 
 $result = mysqli_query($link, $sql);
 
