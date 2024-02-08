@@ -7,5 +7,9 @@
     $subject = "Verification Code: ";
     $message = "Your code: ".$varificationCode;
 
-    mail($to, $subject, $message);
+    if (mail($to, $subject, $message)) {
+        echo "Email sent successfully!";
+    } else {
+        echo "Failed to send email.";
+    }
 ?>
