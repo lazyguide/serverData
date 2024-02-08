@@ -9,11 +9,11 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 $mail = new PHPMailer(true);
 $mail->isSMTP();                                            //Send using SMTP
-$mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+$mail->Host       = 'smtp-mail.outlook.com';                     //Set the SMTP server to send through
 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
 $mail->Username   = 'project.lazyguide@gmail.com';                     //SMTP username
 $mail->Password   = 'IM41project@lazyguide';                               //SMTP password
-$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+$mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
 $mail->Port       = 587;
 
 $mail->setFrom('project.lazyguide@gmail.com', 'lazyguide');
