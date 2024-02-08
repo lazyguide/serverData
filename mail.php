@@ -1,18 +1,28 @@
 <?php
-    ini_set("SMTP", "smtp.gmail.com");
-    ini_set("smtp_port", 587);
+$email = $_POST['email'];
 
-    $to = $_POST['email'];
-    $varificationCode = rand(100000, 999999);
-    $subject = "Verification Code: ";
-    $message = "Your code: ".$varificationCode;
-    $headers = "From: project.lazyguide@gmail.com\r\n";
-    $headers .= "Reply-To: project.lazyguide@gmail.com\r\n";
-    $headers .= "Return-Path: project.lazyguide@gmail.com\r\n";
+$verificationCode = rand(100000, 999999);
 
-    if (mail($to, $subject, $message, $headers)) {
-        echo "Email sent successfully!";
-    } else {
-        echo "Failed to send email.";
-    }
+require 'vendor/autoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+$mail = new PHPMailer(true);
+$mail->isSMTP();                                            //Send using SMTP
+$mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+$mail->Username   = 'project.lazyguide@gmail.com';                     //SMTP username
+$mail->Password   = 'IM41project@lazyguide';                               //SMTP password
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+$mail->Port       = 587;
+
+$mail->setFrom('project.lazyguide@gmail.com', 'lazyguide');
+$mail->addAddress($email);
+
+$mail->subject = "lazyguide Verification";
+$mail->Body = "Verification Code: ".$verificationCode;
+
+$mail->send();
+
+echo (string)$verificationCode;
 ?>
