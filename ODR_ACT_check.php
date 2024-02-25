@@ -17,10 +17,7 @@ if($status = "unvarified"){
 }
 
 $result = mysqli_query($link, $sql);
-if($result){
-    echo "success";
-}else{
-    echo "fail";
+while($row = mysqli_fetch_assoc($result)){
+    echo json_encode($row);
 }
-
 ?>
