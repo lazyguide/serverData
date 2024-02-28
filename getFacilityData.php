@@ -12,7 +12,10 @@ echo $firstPart, $ID;
 $sql = "SELECT * FROM facility WHERE FACILIYTTYPE = '$firstPart' AND FACILITYID = $ID";
 
 $result = mysqli_query($link, $sql);
-
-$row = mysqli_fetch_assoc($result);
-echo json_encode($row);
+if($result){
+    $row = mysqli_fetch_assoc($result);
+    echo json_encode($row);
+}else{
+    echo "Error";
+}
 ?>
