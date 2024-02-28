@@ -1,6 +1,5 @@
 <?php
-include("config.php");
-
+$link = @mysqli_connect('localhost', 'root', '12345678', 'lazyguide');
 $str = $_POST['facilityName'];
 $length = strlen($str);
 
