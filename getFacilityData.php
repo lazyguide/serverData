@@ -9,7 +9,7 @@ $lastTwoChars = substr($str, -2); // Extract the last two characters
 $ID = (int)($lastTwoChars);
 echo $firstPart, $ID;
 
-$sql = "SELECT * FROM facility WHERE FACILIYTTYPE = '$firstPart' AND FACILITYID = $ID";
+$sql = "SELECT * FROM facility WHERE FACILITYTYPE = '$firstPart' AND FACILITYID = $ID";
 
 $result = mysqli_query($link, $sql);
 if($result){
