@@ -1,13 +1,12 @@
 <?php
-$building = $_POST['building'];
+$keyword = $_POST['keyword'];
 $link = @mysqli_connect("localhost", "root", "12345678", "lazyguide");
 
-$sql = "SELECT * FROM building WHERE BUILDINGID = '$building'";
+$buildingSQL = "SELECT * FROM building WHERE BUILDINGID LIKE '%".$keyword."%' OR BUILDINGNAME LIKE '%".$keyword."%' OR BUILDINGDESCRIPTION LIKE '%".$keyword."%'";
+$buildingResult = mysqli_query($link, $buildingSQL);
 
-$result = mysqli_query($link, $sql);
-
-$row = mysqli_fetch_assoc($result);
-
-echo json_encode($row);
+while($row = mysqli_fetch_assoc($buildingResult)) {
+    echo json_encode($row);
+}
 
 ?>
