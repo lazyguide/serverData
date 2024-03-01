@@ -1,7 +1,7 @@
 <?php
 $ID = $_POST['libraryID'];
 $link = @mysqli_connect('localhost', 'root', '12345678', 'root');
-$SQL = "SELECT * FROM library WHERE LIBRARY = '$ID'";
+$SQL = "SELECT * FROM library WHERE LIBRARYID = '$ID'";
 
 $result = mysqli_query($link, $SQL);
 
