@@ -1,7 +1,7 @@
 <?php
 $ID = $_POST['buildingID'];
 $link = @mysqli_connect('localhost', 'root', '12345678', 'lazyguide');
-$SQL = "SELECT * FROM building WHERE BULIDINGID = '$ID'";
+$SQL = "SELECT * FROM building WHERE BUILDINGID = '$ID'";
 
 $result = mysqli_query($link, $SQL);
 
