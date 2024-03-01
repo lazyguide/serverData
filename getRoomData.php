@@ -7,6 +7,6 @@ $SQL = "SELECT * FROM room WHERE BUILDINGID = '$ID' AND FLOOR = $floor";
 $result = mysqli_query($link, $SQL);
 
 while($row = mysqli_fetch_assoc($result)){
-    json_encode($row);
+    echo json_encode($row);
 }
 ?>
