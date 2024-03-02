@@ -8,11 +8,11 @@ $result = mysqli_query($link, $SQL);
 
 while($row = mysqli_fetch_assoc($result)){
     if(strpos($ID, "/") !== false){
-        $array = [];
-        $array['BUILDINGID'] = substr($row['ROOMID'], 0, 2);
-        $array['ROOMID'] = substr($row['ROOMID'], 2);
-        $array['ROOMNAME'] = $row['ROOMNAME'];
-        $array['FLOOR'] = $row['FLOOR'];
+        $newBuilding = substr($row['ROOMID'], 0, 2);
+        $newRoom = substr($row['ROOMID'], 2);
+        $newName = $row['ROOMNAME'];
+        $newFloor = $row['FLOOR'];
+        $array = array('BUILDINGID' => $newBuilding, 'ROOMID' => $newRoom, 'ROOMNAME' => $newName, 'FLOOR' => $newFloor);
         json_encode($array);
     }else{
         json_encode($row);
