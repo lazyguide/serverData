@@ -8,6 +8,7 @@ $result = mysqli_query($link, $SQL);
 
 while($row = mysqli_fetch_assoc($result)){
     if(strpos($ID, "/") !== false){
+        $array = [];
         $array['BUILDINGID'] = substr($row['ROOMID'], 0, 2);
         $array['ROOMID'] = substr($row['ROOMID'], 2);
         $array['ROOMNAME'] = $row['ROOMNAME'];
