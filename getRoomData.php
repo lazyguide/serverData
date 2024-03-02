@@ -7,7 +7,7 @@ $SQL = "SELECT * FROM room WHERE BUILDINGID = '$ID' AND FLOOR = $floor";
 $result = mysqli_query($link, $SQL);
 
 while($row = mysqli_fetch_assoc($result)){
-    if(strpos($ID, "/")){
+    if(strpos($ID, "/") !== false){
         $row['BUILDINGID'] = substr($row['ROOMID'], 0, 2);
         $row['ROOMID'] = substr($row['ROOMID'], 2);
         echo $row['BUILDINGID'];
