@@ -13,9 +13,9 @@ while($row = mysqli_fetch_assoc($result)){
         $newName = $row['ROOMNAME'];
         $newFloor = $row['FLOOR'];
         $array = array('BUILDINGID' => $newBuilding, 'ROOMID' => $newRoom, 'ROOMNAME' => $newName, 'FLOOR' => $newFloor);
-        json_encode($array);
+        echo json_encode($array);
     }else{
-        json_encode($row);
+        echo json_encode($row);
     }
 }
 ?>
