@@ -10,6 +10,8 @@ while($row = mysqli_fetch_assoc($result)){
     if(strpos($ID, "/")){
         $row['BUILDINGID'] = substr($row['ROOMID'], 0, 2);
         $row['ROOMID'] = substr($row['ROOMID'], 2);
+        echo $row['BUILDINGID'];
+        echo $row['ROOMID'];
     }
     json_encode($row);
 }
