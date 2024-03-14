@@ -7,7 +7,7 @@ $sql = "SELECT * FROM outdoor_activity odr, place
         AND (ODR_ACTNAME LIKE '%".$keyword."%' 
         OR ODR_ACT_DESCRIPTION LIKE '%".$keyword."%' 
         OR TYPE LIKE '%".$keyword."%' 
-        OR PLACENAME LIKE '%".$keyword."%'";
+        OR PLACENAME LIKE '%".$keyword."%')";
 
 $result = mysqli_query($link, $sql);
 while($row = mysqli_fetch_assoc($result)){
