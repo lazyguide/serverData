@@ -2,7 +2,7 @@
 $keyword = $_POST['keyword'];
 
 $link = @mysqli_connect('localhost', 'root', '12345678', 'lazyguide');
-$sql = "SELECT * FROM outdoor_activity odr
+$sql = "SELECT * FROM outdoor_activity odr, place
         WHERE ISVARIFIED = 1 AND odr.PLACEID = place.PLACEID
         AND (ODR_ACTNAME LIKE '%".$keyword."%' 
         OR ODR_ACT_DESCRIPTION LIKE '%".$keyword."%' 
