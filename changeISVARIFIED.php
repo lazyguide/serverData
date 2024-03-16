@@ -2,7 +2,7 @@
 $userID = $_POST['userID'];
 $link = @mysqli_connect('localhost', 'root', '12345678', 'lazyguide');
 
-$sql = "UPDATE account SET ISVARIFIED = 0 WHERE USERID = '$userID'";
+$sql = "UPDATE account SET ISVARIFIED = 1 WHERE USERID = '$userID'";
 
 $result = mysqli_query($link, $sql);
 
