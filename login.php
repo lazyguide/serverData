@@ -9,12 +9,12 @@ $result = mysqli_query($link, $sql);
 
 if($row = mysqli_fetch_assoc($result)){
     $array = array("status" => "success", "USERID" => $userID,
-                    "PASSWORD" => $password, "ISVARIFIED" => $row["ISVARIFIED"]);
+                    "PASSWORD" => $password, "ISVERIFIED" => $row["ISVERIFIED"]);
     echo json_encode($array);
 }
 else{
     $array = array("status" => "fail", "USERID" => $userID,
-        "PASSWORD" => $password, "ISVARIFIED" => NULL);
+        "PASSWORD" => $password, "ISVERIFIED" => NULL);
     echo json_encode($array);
 }
 ?>
