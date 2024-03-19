@@ -8,13 +8,13 @@ $sql = "SELECT * FROM account WHERE USERID = '$userID' AND PASSWORD = '$password
 $result = mysqli_query($link, $sql);
 
 if($row = mysqli_fetch_assoc($result)){
-    $array = array("status" => "success", "userID" => $userID, "userName" => $row['USERNAME'],
-                    "password" => $password, "phone" => $row["PHONE"], "isVarified" => $row["ISVARIFIED"], "level" => $row["LEVEL"]);
+    $array = array("status" => "success", "USERID" => $userID,
+                    "PASSWORD" => $password, "ISVARIFIED" => $row["ISVARIFIED"]);
     echo json_encode($array);
 }
 else{
-    $array = array("status" => "fail", "userID" => $userID, "userName" => NULL,
-        "password" => $password, "phone" => NULL, "isVarified" => NULL, "level" => NULL);
+    $array = array("status" => "fail", "USERID" => $userID,
+        "PASSWORD" => $password, "ISVARIFIED" => NULL);
     echo json_encode($array);
 }
 ?>
