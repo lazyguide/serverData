@@ -33,7 +33,7 @@ else
 }
 
 if ($link->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "success";
 } else {
     echo "Error: " . $sql . "<br>" . $link->error;
 }
