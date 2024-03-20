@@ -10,5 +10,6 @@ $result = mysqli_query($link, $sql);
 while($row = mysqli_fetch_assoc($result)){
     array_push($ans, $row['ROOMID']);
 }
-echo json_encode($ans);
+$json = array("Array" => $ans);
+echo json_encode($json);
 ?>
