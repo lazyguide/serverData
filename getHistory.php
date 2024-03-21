@@ -3,7 +3,11 @@ $userID = $_POST['userID'];
 $table = $_POST['table'];
 
 $link = mysqli_connect('localhost', 'root', '12345678', 'lazyguide');
-$sql = "SELECT * FROM $table WHERE USERID = '$userID'";
+if($table == "indoor_activity"){
+    $sql = "SELECT * FROM indoor_activity WHERE USERID = '$userID'";
+}else{
+    $sql = "SELECT * FROM outdoor_activity LEFT OUTER JOIN place ON outdoor_activity.PLACEID = place.PLACEID";
+}
 
 $result = mysqli_query($link, $sql);
 
