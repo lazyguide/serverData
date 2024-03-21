@@ -3,7 +3,7 @@ $userID = $_POST['userID'];
 $table = $_POST['table'];
 
 $link = mysqli_connect('localhost', 'root', '12345678', 'lazyguide');
-$sql = "SELECT * FROM '$table' WHERE USERID = '$userID'";
+$sql = "SELECT * FROM $table WHERE USERID = '$userID'";
 
 $result = mysqli_query($link, $sql);
 
