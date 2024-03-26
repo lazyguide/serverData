@@ -4,7 +4,7 @@ $connection = mysqli_connect('localhost', 'root', '12345678', 'lazyguide');
 // 檢查是否收到 POST 請求
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // 檢查是否接收到名為 "dateValue"、"yearTextValue" 和 "monthTextValue" 的參數
-    if (isset($_POST["dateValue"]) && isset($_POST["yearTextValue"]) && isset($_POST["monthTextValue"]) && isset($_POST["typeValue"]) && isset($_POST["methodValue"])) {
+    if (isset($_POST["date"]) && isset($_POST["typeValue"]) && isset($_POST["methodValue"])) {
         // 獲取來自 Unity 的值
         $date = $_POST['date'];
         $typeValue = $_POST["typeValue"];

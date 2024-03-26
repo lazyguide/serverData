@@ -4,7 +4,7 @@ $link = mysqli_connect('localhost', 'root', '12345678', 'lazyguide');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    if (isset($_POST["dateValue"]) && isset($_POST["yearTextValue"]) && isset($_POST["monthTextValue"]) && isset($_POST["typeValue"]) && isset($_POST["methodValue"])) {
+    if (isset($_POST["date"]) && isset($_POST["typeValue"]) && isset($_POST["methodValue"])) {
 
         $date = $_POST['date'];
         $typeValue = $_POST["typeValue"];
