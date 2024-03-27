@@ -18,25 +18,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if($typeValue=="All" && $methodValue=="All"){
             $sql = "
             SELECT * FROM outdoor_activity 
-            WHERE '$date' >= ODR_ACT_STARTDATE AND '$date' <= ODR_ACT_ENDDATE
+            WHERE '$date' >= ODR_ACT_STARTDATE AND '$date' <= ODR_ACT_ENDDATE AND VCODEVERIFY  = 1 AND ADMINVERIFY = 1
         ";
         }elseif($typeValue=="All"){
             $sql = "
             SELECT * FROM outdoor_activity 
             WHERE '$date' >= ODR_ACT_STARTDATE AND '$date' <= ODR_ACT_ENDDATE
-            AND METHOD = '$methodValue';
+            AND METHOD = '$methodValue' AND VCODEVERIFY  = 1 AND ADMINVERIFY = 1;
         ";
         }elseif($methodValue=="All"){
             $sql = "
             SELECT * FROM outdoor_activity 
             WHERE '$date' >= ODR_ACT_STARTDATE AND '$date' <= ODR_ACT_ENDDATE
-            AND TYPE = '$typeValue'
+            AND TYPE = '$typeValue' AND VCODEVERIFY  = 1 AND ADMINVERIFY = 1
         ";
         }else{
             $sql = "
             SELECT * FROM outdoor_activity 
             WHERE '$date' >= ODR_ACT_STARTDATE AND '$date' <= ODR_ACT_ENDDATE
-            AND TYPE = '$typeValue' AND METHOD = '$methodValue'
+            AND TYPE = '$typeValue' AND METHOD = '$methodValue' AND VCODEVERIFY  = 1 AND ADMINVERIFY = 1
         ";
         }
         $result = mysqli_query($connection, $sql);
