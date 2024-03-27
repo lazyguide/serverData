@@ -19,10 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $sql = "
             SELECT * FROM indoor_activity
-            WHERE '$date' >= IDR_ACT_STARTDATE AND '$date' <= IDR_ACT_ENDDATE AND VCODEVERIFY  = 1 AND ADMINVERIFY = 1
+            WHERE '$date' >= IDR_ACT_STARTDATE AND '$date' <= IDR_ACT_ENDDATE AND VCODEVERIFY = 1 AND ADMINVERIFY = 1
         ";
         }elseif($typeValue=="All"){
-
+            echo $methodValue;
             $sql = "
             SELECT * FROM indoor_activity
             WHERE '$date' >= IDR_ACT_STARTDATE AND '$date' <= IDR_ACT_ENDDATE
